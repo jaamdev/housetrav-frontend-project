@@ -1,9 +1,9 @@
-const URL = import.meta.env.VITE_API_URL;
+const backendUrl = import.meta.env.VITE_API_URL;
 
 // PORTAL
 export const getPortalProperties = async () => {
   try {
-    const result = await fetch(`${URL}/portal`, {
+    const result = await fetch(`${backendUrl}/portal`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json; charset=UTF-8',
@@ -18,7 +18,7 @@ export const getPortalProperties = async () => {
 
 export const getPortalPropertyId = async (id) => {
   try {
-    const result = await fetch(`${URL}/portal/${id}`, {
+    const result = await fetch(`${backendUrl}/portal/${id}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json; charset=UTF-8',
@@ -34,7 +34,7 @@ export const getPortalPropertyId = async (id) => {
 // USER
 export const verifyUser = async () => {
   try {
-    const result = await fetch(`${URL}/user/profile`, {
+    const result = await fetch(`${backendUrl}/user/profile`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json; charset=UTF-8',
@@ -50,7 +50,7 @@ export const verifyUser = async () => {
 
 export const removeUser = async () => {
   try {
-    const result = await fetch(`${URL}/user/profile`, {
+    const result = await fetch(`${backendUrl}/user/profile`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json; charset=UTF-8',
@@ -66,7 +66,7 @@ export const removeUser = async () => {
 
 export const login = async (user) => {
   try {
-    const result = await fetch(`${URL}/user/signin`, {
+    const result = await fetch(`${backendUrl}/user/signin`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json; charset=UTF-8',
@@ -83,7 +83,7 @@ export const login = async (user) => {
 
 export const logout = async () => {
   try {
-    const result = await fetch(`${URL}/user/logout`, {
+    const result = await fetch(`${backendUrl}/user/logout`, {
       method: 'GET',
       credentials: 'include',
     });
@@ -96,7 +96,7 @@ export const logout = async () => {
 
 export const register = async (user) => {
   try {
-    const result = await fetch(`${URL}/user/signup`, {
+    const result = await fetch(`${backendUrl}/user/signup`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json; charset=UTF-8',
@@ -114,7 +114,7 @@ export const register = async (user) => {
 // PROPERTIES
 export const getUserProperties = async () => {
   try {
-    const result = await fetch(`${URL}/properties`, {
+    const result = await fetch(`${backendUrl}/properties`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json; charset=UTF-8',
@@ -130,7 +130,7 @@ export const getUserProperties = async () => {
 
 export const getPropertyId = async (id) => {
   try {
-    const result = await fetch(`${URL}/properties/${id}`, {
+    const result = await fetch(`${backendUrl}/properties/${id}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json; charset=UTF-8',
@@ -146,7 +146,7 @@ export const getPropertyId = async (id) => {
 
 export const createProperty = async (property) => {
   try {
-    const result = await fetch(`${URL}/properties`, {
+    const result = await fetch(`${backendUrl}/properties`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json; charset=UTF-8',
@@ -163,7 +163,7 @@ export const createProperty = async (property) => {
 
 export const updateProperty = async ({ id, property }) => {
   try {
-    const result = await fetch(`${URL}/properties/${id}`, {
+    const result = await fetch(`${backendUrl}/properties/${id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json; charset=UTF-8',
@@ -180,7 +180,7 @@ export const updateProperty = async ({ id, property }) => {
 
 export const removeProperty = async (id) => {
   try {
-    const result = await fetch(`${URL}/properties/${id}`, {
+    const result = await fetch(`${backendUrl}/properties/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json; charset=UTF-8',
@@ -197,7 +197,7 @@ export const removeProperty = async (id) => {
 // UPLOADS
 export const uploadAvatar = async (formData) => {
   try {
-    const result = await fetch(`${URL}/upload/avatar`, {
+    const result = await fetch(`${backendUrl}/upload/avatar`, {
       method: 'POST',
       credentials: 'include',
       body: formData,
@@ -211,7 +211,7 @@ export const uploadAvatar = async (formData) => {
 
 export const getPropertyImages = async (id) => {
   try {
-    const result = await fetch(`${URL}/upload/images/${id}`, {
+    const result = await fetch(`${backendUrl}/upload/images/${id}`, {
       method: 'GET',
     });
     const response = await result.json();
@@ -223,7 +223,7 @@ export const getPropertyImages = async (id) => {
 
 export const postPropertyImages = async (id, formData) => {
   try {
-    const result = await fetch(`${URL}/upload/images/${id}`, {
+    const result = await fetch(`${backendUrl}/upload/images/${id}`, {
       method: 'POST',
       credentials: 'include',
       body: formData,
@@ -237,7 +237,7 @@ export const postPropertyImages = async (id, formData) => {
 
 export const deletePropertyImages = async (id, fileName) => {
   try {
-    const result = await fetch(`${URL}/upload/images/${id}`, {
+    const result = await fetch(`${backendUrl}/upload/images/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json; charset=UTF-8',
