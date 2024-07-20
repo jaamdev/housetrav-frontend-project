@@ -1,0 +1,15 @@
+{
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "#Components/*": ["./src/components/*"],
+      "#Contexts/*": ["./src/contexts/*"],
+      "#Hooks/*": ["./src/hooks/*"],
+      "#Pages/*": ["./src/pages/*"],
+      "#Reducers/*": ["./src/reducers/*"],
+      "#Services/*": ["./src/services/*"],
+      "#Utils/*": ["./src/utils/*"]
+    }
+  }
+}
