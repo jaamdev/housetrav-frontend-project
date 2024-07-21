@@ -62,10 +62,14 @@ export default function PropertyCard({
               <h3 className="card-baths-ctn">
                 {baths} {baths <= 1 ? 'baño' : 'baños'}
               </h3>
-              <h3 className="card-size-ctn">{propertySize} m²</h3>
+              <h3 className="card-size-ctn">
+                {propertySize.toLocaleString('es-ES')} m²
+              </h3>
             </>
           ) : (
-            <h3 className="card-size-ctn">{propertySizeTerrain} m²</h3>
+            <h3 className="card-size-ctn">
+              {propertySizeTerrain.toLocaleString('es-ES')} m²
+            </h3>
           )}
         </div>
       </Link>
